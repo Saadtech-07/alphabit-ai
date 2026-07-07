@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sidebar: #f9f9f9;
+  --color-sidebar-hover: #ececec;
+  --color-sidebar-border: #e5e5e5;
+  --color-chat: #ffffff;
+  --color-bubble-ai: #f4f4f5;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #111827;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 3px;
+  }
+
+  .gradient-user {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+  }
+
+  .prose-chat {
+    @apply text-sm leading-relaxed text-gray-800;
+  }
+
+  .prose-chat pre {
+    @apply rounded-lg bg-gray-100 border border-gray-200 p-4 overflow-x-auto my-3 text-[13px];
+  }
+
+  .prose-chat code {
+    @apply rounded px-1.5 py-0.5 text-[13px] bg-gray-100 text-gray-800;
+  }
+
+  .prose-chat pre code {
+    @apply bg-transparent p-0 border-0;
+  }
+
+  .prose-chat p {
+    @apply mb-2 last:mb-0;
+  }
+
+  .prose-chat ul,
+  .prose-chat ol {
+    @apply ml-4 mb-2;
+  }
+
+  .prose-chat ul {
+    @apply list-disc;
+  }
+
+  .prose-chat ol {
+    @apply list-decimal;
+  }
+
+  .prose-chat h1,
+  .prose-chat h2,
+  .prose-chat h3 {
+    @apply font-semibold mb-2 mt-3 text-gray-900;
+  }
+
+  .prose-chat h1 {
+    @apply text-lg;
+  }
+
+  .prose-chat h2 {
+    @apply text-base;
+  }
+
+  .prose-chat a {
+    @apply text-blue-600 underline;
+  }
+}
